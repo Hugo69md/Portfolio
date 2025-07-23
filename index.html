@@ -2,40 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio</title>
+  <title>Hugo Manipoud's Data Analysis Portfolio</title>
   <style>
-
     @font-face {
-    font-family: 'police';
-    src: url('police.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+      font-family: 'police';
+      src: url('police.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
     }
 
     body {
       margin: 0;
       font-family: 'police', sans-serif;
-      background-image: url('background.JPG');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
       padding: 40px 20px;
+      position: relative;
+      z-index: 1;
+      overflow-x: hidden;
+      color: #051c35d5;
     }
-  
+
+    /* Video Background */
+    video#bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.8;
+    }
 
     h1 {
+      text-align: center;
       margin-bottom: 40px;
       font-size: 2.8em;
-      color: #0c0c0c;
-      font-family: 'police', sans-serif;
     }
 
     h2 {
       margin-top: 60px;
       margin-bottom: 20px;
       font-size: 1.8em;
-      color: #1a1818;
-      font-family: 'police', sans-serif;
+      color: #0f2d34d5;
     }
 
     .image-container {
@@ -49,30 +57,118 @@
 
     img {
       width: 100%;
-      max-width: 1700px;
+      max-width: 1800px;
       height: auto;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
       background: white;
     }
+
+    /* Music Controls */
+    #music-controls {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 10px 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      font-size: 0.9em;
+      z-index: 1000;
+    }
+
+    #music-controls button,
+    #music-controls input[type="range"] {
+      margin-left: 10px;
+    }
+
+    /* Credits */
+    footer.credits {
+      margin-top: 100px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #3b3b3b;
+    }
   </style>
 </head>
+
 <body>
-  <h1>Hugo Manipoud's Data analysis portfolio</h1>
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="backgroundfinal.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Music Controls -->
+  <div id="music-controls">
+    <button id="music-toggle">Pause Music</button>
+    <label for="volume">Volume</label>
+    <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+  </div>
+
+  <!-- Audio Element -->
+  <audio id="background-music" autoplay loop>
+    <source src="save_file_2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Portfolio Content -->
+  <h1><br>Hugo Manipoud's Data Analysis Portfolio</h1>
+
   <div class="image-container">
-    <h2>First Project : Descriptive and inferential statistics</h2>
+    <h2>First Project: Descriptive and Inferential Statistics</h2>
     <img src="1.JPG" alt="Slide 1">
     <img src="2.JPG" alt="Slide 2">
     <img src="3.JPG" alt="Slide 3">
     <img src="4.JPG" alt="Slide 4">
 
-    <h2>Second Project : Rupture Trend analysis tools</h2>
+    <h2>Second Project: Rupture Trend Analysis Tools</h2>
     <img src="5.JPG" alt="Slide 5">
     <img src="6.JPG" alt="Slide 6">
     <img src="7.JPG" alt="Slide 7">
 
-    <h2>Third Project : Semi automation for a verification process</h2>
+    <h2>Third Project: Semi-Automation for a Verification Process</h2>
     <img src="8.JPG" alt="Slide 8">
   </div>
+
+  <!-- Credits -->
+  <footer class="credits">
+    <p>
+      Data analysis Portfolio by HUGO MANIPOUD, all scripts and slides have been created by myself<br>
+      <br>
+      //================================================================= WARNING ================================================================//<br>
+      <br>
+      I DO NOT OWN ANY OF THE FOLLOWING, ALL RIGHTS GOES TO THE FOLLOWING ARTISTS :<br>
+      <br>
+      Music : Save file 2 by [Optic Core]<br>
+      <br>
+      Background video on vecteezy by [SuwinP]<br>
+      <br>
+      Font: Kroigs by [Enxyclo Studio]<br>
+      <br>
+      <br>
+    </p>
+  </footer>
+
+  <!-- Script for Music Control -->
+  <script>
+    const music = document.getElementById("background-music");
+    const toggleBtn = document.getElementById("music-toggle");
+    const volumeSlider = document.getElementById("volume");
+
+    toggleBtn.addEventListener("click", () => {
+      if (music.paused) {
+        music.play();
+        toggleBtn.textContent = "Pause Music";
+      } else {
+        music.pause();
+        toggleBtn.textContent = "Play Music";
+      }
+    });
+
+    volumeSlider.addEventListener("input", () => {
+      music.volume = volumeSlider.value;
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rupture Trend Analysis Tools - Hugo Manipoud</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="backgroundfinal.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Music Controls -->
+  <div id="music-controls">
+    <button id="music-toggle">Play Music for full immersion!</button>
+    <label for="volume">Volume</label>
+    <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+  </div>
+
+  <!-- Audio Element -->
+  <audio id="background-music" loop>
+    <source src="save_file_2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Project Content -->
+  <div class="project-container">
+    <a href="index.html" class="back-button">← Back to Portfolio</a>
+    
+    <h1>Rupture Trend Analysis Tools</h1>
+
+    <h2>Project Description</h2>
+    <p>
+      This project focuses on developing specialized analytical tools for detecting and analyzing 
+      rupture trends in engineering data. The tools are designed to identify critical points where 
+      significant changes or breaks occur in data patterns, which is essential for predictive 
+      maintenance and quality control in engineering applications.
+    </p>
+    <p>
+      By implementing advanced statistical techniques and machine learning algorithms, these tools 
+      can automatically detect anomalies and trend shifts that might indicate potential failures 
+      or critical changes in system behavior.
+    </p>
+
+    <h2>Tools & Technologies</h2>
+    <ul>
+      <li>Python for core development and data processing</li>
+      <li>Pandas and NumPy for data manipulation</li>
+      <li>Scikit-learn for machine learning algorithms</li>
+      <li>Change point detection algorithms</li>
+      <li>Time series analysis libraries</li>
+      <li>Matplotlib and Plotly for interactive visualizations</li>
+      <li>Statistical process control methods</li>
+    </ul>
+
+    <h2>Key Results & Findings</h2>
+    <p>
+      The developed tools have demonstrated significant capabilities:
+    </p>
+    <ul>
+      <li>Accurate detection of rupture points in time series data</li>
+      <li>Real-time monitoring and alerting capabilities</li>
+      <li>Visualization of trend patterns and anomalies</li>
+      <li>Statistical validation of detected changes</li>
+      <li>Automated reporting of critical events</li>
+    </ul>
+
+    <h2>Challenges & Learning Points</h2>
+    <p>
+      The main challenge was balancing sensitivity and specificity to avoid both false positives 
+      and false negatives in rupture detection. This required careful calibration of detection 
+      thresholds and the implementation of validation mechanisms. The project significantly 
+      enhanced my understanding of signal processing and anomaly detection techniques.
+    </p>
+  </div>
+
+  <!-- Credits -->
+  <footer class="credits">
+    <p>
+      Data analysis Portfolio by HUGO MANIPOUD, all scripts and slides have been created by myself<br>
+      <br>
+      //================================================================= WARNING ================================================================//<br>
+      <br>
+      I DO NOT OWN ANY OF THE FOLLOWING, ALL RIGHTS GOES TO THE FOLLOWING ARTISTS :<br>
+      <br>
+      Music : Save file 2 by [Optic Core]<br>
+      <br>
+      Background video on vecteezy by [SuwinP]<br>
+      <br>
+      Font: Kroigs by [Enxyclo Studio]<br>
+      <br>
+      <br>
+    </p>
+  </footer>
+
+  <!-- Script for Music Control -->
+  <script src="music.js"></script>
+</body>
+</html>

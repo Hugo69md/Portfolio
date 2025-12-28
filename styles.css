@@ -61,7 +61,7 @@ video#bg-video {
   padding: 10px 15px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  font-size: 0.9em;
+  font-size: 1.15em;
   z-index: 1000;
 }
 
@@ -133,7 +133,7 @@ header .name {
 }
 
 .hero-content p {
-  font-size: 1em;
+  font-size: 1.25em;
   line-height: 1.6;
   color: var(--text-dark);
 }
@@ -200,7 +200,7 @@ header .name {
 }
 
 .project-card p {
-  font-size: 0.95em;
+  font-size: 1.2em;
   line-height: 1.5;
   color: var(--text-medium);
 }
@@ -249,14 +249,14 @@ header .name {
 }
 
 .project-container p {
-  font-size: 1.2em;
+  font-size: 1.45em;
   line-height: 1.8;
   margin-bottom: 20px;
   color: var(--text-dark);
 }
 
 .project-container ul {
-  font-size: 1.1em;
+  font-size: 1.35em;
   line-height: 1.8;
   margin-left: 30px;
   color: var(--text-dark);
@@ -270,10 +270,11 @@ header .name {
 footer.credits {
   margin-top: 100px;
   text-align: center;
-  font-size: 0.9em;
+  font-size: 1.15em;
   color: #3b3b3b;
   background: var(--bg-overlay);
   padding: 30px 20px;
+  font-family: 'police', sans-serif;
 }
 
 footer.credits p {
@@ -312,7 +313,7 @@ footer.credits p {
   }
 
   .hero-content p {
-    font-size: 0.9em;
+    font-size: 1.15em;
   }
 
   .projects {
@@ -344,7 +345,7 @@ footer.credits p {
   #music-controls {
     bottom: 10px;
     right: 10px;
-    font-size: 0.8em;
+    font-size: 1.05em;
     padding: 8px 12px;
   }
 }

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <circle cx="150" cy="150" r="150" fill="#56E89F"/>
+  <circle cx="150" cy="120" r="50" fill="#fff"/>
+  <path d="M 75 250 Q 75 180 150 180 Q 225 180 225 250 Z" fill="#fff"/>
+  <text x="150" y="285" font-size="20" text-anchor="middle" fill="#E66596" font-weight="bold">HUGO M.</text>
+</svg>

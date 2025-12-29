@@ -283,13 +283,18 @@ footer.credits p {
 
 /* Page Section Management for SPA */
 .page-section {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
 .page-section.active {
-  display: block;
+  position: relative;
+  visibility: visible;
   opacity: 1;
 }
 

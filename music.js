@@ -5,12 +5,6 @@ const music = document.getElementById("background-music");
 const toggleBtn = document.getElementById("music-toggle");
 const volumeSlider = document.getElementById("volume");
 
-// Initialize music controls
-function initMusic() {
-  // Start with music paused, user must interact to play
-  toggleBtn.textContent = "Play Music for full immersion!";
-}
-
 // Toggle play/pause
 toggleBtn.addEventListener("click", () => {
   if (music.paused) {
@@ -26,9 +20,6 @@ toggleBtn.addEventListener("click", () => {
 volumeSlider.addEventListener("input", () => {
   music.volume = volumeSlider.value;
 });
-
-// Initialize on page load
-initMusic();
 
 // SPA Section Navigation
 function navigateToSection(sectionId) {

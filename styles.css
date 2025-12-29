@@ -281,6 +281,23 @@ footer.credits p {
   margin: 0;
 }
 
+/* Page Section Management for SPA */
+.page-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.page-section.active {
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   header {

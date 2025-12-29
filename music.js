@@ -1,40 +1,9 @@
-// Music persistence using sessionStorage
-// This ensures music doesn't restart when navigating between pages
+// SPA Navigation System
+// Music plays continuously without interruption
 
 const music = document.getElementById("background-music");
 const toggleBtn = document.getElementById("music-toggle");
 const volumeSlider = document.getElementById("volume");
-
-// Initialize music state from sessionStorage
-function initMusic() {
-  // Get saved state from sessionStorage
-  const savedTime = parseFloat(sessionStorage.getItem('musicTime')) || 0;
-  const savedVolume = parseFloat(sessionStorage.getItem('musicVolume')) || 1;
-  const wasPaused = sessionStorage.getItem('musicPaused') === 'true';
-
-  // Set initial values
-  music.currentTime = savedTime;
-  music.volume = savedVolume;
-  volumeSlider.value = savedVolume;
-
-  // Play or pause based on saved state
-  if (!wasPaused) {
-    music.play().catch(err => {
-      console.log("Auto-play prevented:", err);
-      toggleBtn.textContent = "Play Music for full immersion!";
-    });
-    toggleBtn.textContent = "Pause Music";
-  } else {
-    toggleBtn.textContent = "Play Music for full immersion!";
-  }
-}
-
-// Save music state to sessionStorage
-function saveState() {
-  sessionStorage.setItem('musicTime', music.currentTime.toString());
-  sessionStorage.setItem('musicVolume', music.volume.toString());
-  sessionStorage.setItem('musicPaused', music.paused.toString());
-}
 
 // Toggle play/pause
 toggleBtn.addEventListener("click", () => {
@@ -45,25 +14,51 @@ toggleBtn.addEventListener("click", () => {
     music.pause();
     toggleBtn.textContent = "Play Music for full immersion!";
   }
-  saveState();
 });
 
 // Volume control
 volumeSlider.addEventListener("input", () => {
   music.volume = volumeSlider.value;
-  saveState();
 });
 
-// Save state periodically during playback
-music.addEventListener('timeupdate', () => {
-  // Save every 500ms to avoid too many writes
-  if (!music.paused && music.currentTime % 0.5 < 0.1) {
-    saveState();
+// SPA Section Navigation
+function navigateToSection(sectionId) {
+  // Hide all sections
+  const allSections = document.querySelectorAll('.page-section');
+  allSections.forEach(section => {
+    section.classList.remove('active');
+  });
+  
+  // Show the requested section
+  const targetSection = document.getElementById(sectionId);
+  if (targetSection) {
+    targetSection.classList.add('active');
+    // Smooth scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+// Handle navigation clicks
+document.addEventListener('click', (e) => {
+  // Check if clicked element or its parent has data-section attribute
+  const navElement = e.target.closest('[data-section]');
+  if (navElement) {
+    e.preventDefault();
+    const sectionId = navElement.getAttribute('data-section');
+    navigateToSection(sectionId);
+    // Update URL hash without triggering scroll
+    history.pushState(null, null, '#' + sectionId);
   }
 });
 
-// Save state when page is about to unload
-window.addEventListener('beforeunload', saveState);
+// Handle browser back/forward buttons
+window.addEventListener('popstate', () => {
+  const hash = window.location.hash.substring(1) || 'home';
+  navigateToSection(hash);
+});
 
-// Initialize on page load
-initMusic();
+// Handle initial page load with hash
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash.substring(1) || 'home';
+  navigateToSection(hash);
+});

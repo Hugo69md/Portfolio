@@ -15,8 +15,8 @@
 
 /* CSS Variables for Color Scheme */
 :root {
-  --primary-color: #56E89F;
-  --secondary-color: #E66596;
+  --primary-color: #0A3D07;
+  --secondary-color: #00344A;
   --text-dark: #051c35d5;
   --text-medium: #0f2d34d5;
   --bg-overlay: rgba(255, 255, 255, 0.85);
@@ -287,9 +287,12 @@ footer.credits p {
   top: 0;
   left: 0;
   width: 100%;
+  min-height: 100vh;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
 
 .page-section.active {

@@ -463,17 +463,18 @@ footer.credits p {
   line-height: 1.8;
 }
 
-/* Test Images Vertical Layout */
+/* Test Images Horizontal Layout */
 .test-images-vertical {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 20px;
   align-items: center;
+  justify-content: center;
 }
 
 .test-images-vertical img {
-  width: 100%;
-  max-width: 700px;
+  width: 48%;
+  max-width: 450px;
   height: auto;
   display: block;
   margin: 0;
@@ -583,7 +584,12 @@ footer.credits p {
     font-size: 1.3em;
   }
 
+  .test-images-vertical {
+    flex-direction: column;
+  }
+
   .test-images-vertical img {
+    width: 100%;
     max-width: 100%;
   }
 }

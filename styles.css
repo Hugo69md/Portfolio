@@ -17,6 +17,8 @@
 :root {
   --primary-color: #0A3D07;
   --secondary-color: #00344A;
+  --accent-burgundy: #63122B;
+  --accent-black: #000000;
   --text-dark: #051c35d5;
   --text-medium: #0f2d34d5;
   --bg-overlay: rgba(255, 255, 255, 0.85);
@@ -59,27 +61,27 @@ video#bg-video {
   bottom: 20px;
   right: 20px;
   background: rgba(255, 255, 255, 0.6);
-  padding: 10px 15px;
+  padding: 8px 12px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  font-size: 1.15em;
+  font-size: 0.95em;
   z-index: 1000;
 }
 
 #music-controls button {
   margin-left: 10px;
-  padding: 5px 15px;
+  padding: 4px 12px;
   border: none;
-  background: var(--primary-color);
+  background: var(--accent-black);
   color: white;
   border-radius: 5px;
   cursor: pointer;
   font-family: 'police', sans-serif;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
 #music-controls button:hover {
-  background: var(--secondary-color);
+  background: var(--accent-burgundy);
 }
 
 #music-controls input[type="range"] {
@@ -147,7 +149,7 @@ header .name {
   width: 100%;
   border-radius: 50%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  border: 5px solid var(--primary-color);
+  border: 5px solid var(--accent-black);
 }
 
 /* Projects Section */
@@ -191,7 +193,7 @@ header .name {
 .project-card:hover {
   transform: translateX(10px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  border-color: var(--primary-color);
+  border-color: var(--accent-burgundy);
 }
 
 .project-card h3 {
@@ -369,7 +371,7 @@ footer.credits p {
   #music-controls {
     bottom: 10px;
     right: 10px;
-    font-size: 1.05em;
-    padding: 8px 12px;
+    font-size: 0.9em;
+    padding: 6px 10px;
   }
 }

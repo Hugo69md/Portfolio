@@ -17,6 +17,8 @@
 :root {
   --primary-color: #0A3D07;
   --secondary-color: #00344A;
+  --accent-burgundy: #63122B;
+  --accent-black: #000000;
   --text-dark: #051c35d5;
   --text-medium: #0f2d34d5;
   --bg-overlay: rgba(255, 255, 255, 0.85);
@@ -70,7 +72,7 @@ video#bg-video {
   margin-left: 10px;
   padding: 4px 12px;
   border: none;
-  background: #000000;
+  background: var(--accent-black);
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -79,7 +81,7 @@ video#bg-video {
 }
 
 #music-controls button:hover {
-  background: #63122B;
+  background: var(--accent-burgundy);
 }
 
 #music-controls input[type="range"] {
@@ -147,7 +149,7 @@ header .name {
   width: 100%;
   border-radius: 50%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  border: 5px solid #000000;
+  border: 5px solid var(--accent-black);
 }
 
 /* Projects Section */
@@ -191,7 +193,7 @@ header .name {
 .project-card:hover {
   transform: translateX(10px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  border-color: #63122B;
+  border-color: var(--accent-burgundy);
 }
 
 .project-card h3 {

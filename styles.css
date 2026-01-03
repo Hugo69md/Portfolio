@@ -396,6 +396,91 @@ footer.credits p {
   overflow-x: auto;
 }
 
+/* GitHub Links Styling */
+.github-links {
+  font-family: 'Iceland', sans-serif;
+  font-size: 1.45em;
+  color: var(--accent-burgundy);
+  margin: 20px 0 40px 0;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.github-links a {
+  color: var(--accent-burgundy);
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+.github-links a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+/* Section Bubbles */
+.section-bubble {
+  background: var(--bg-overlay);
+  padding: 30px 40px;
+  margin: 30px 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.section-bubble h2 {
+  font-family: 'police', sans-serif;
+  font-size: 2em;
+  color: var(--secondary-color);
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.section-bubble p,
+.section-bubble ul {
+  font-family: 'Iceland', sans-serif;
+  font-size: 1.45em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.section-bubble ul {
+  margin-left: 30px;
+}
+
+.section-bubble li {
+  margin-bottom: 10px;
+}
+
+/* Call to Action Text */
+.call-to-action {
+  font-family: 'Iceland', sans-serif;
+  font-size: 1.5em;
+  color: var(--accent-burgundy);
+  text-align: center;
+  margin: 40px 0;
+  font-weight: bold;
+  line-height: 1.8;
+}
+
+/* Test Images Vertical Layout */
+.test-images-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.test-images-vertical img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   header {
@@ -479,5 +564,26 @@ footer.credits p {
     right: 10px;
     font-size: 0.9em;
     padding: 6px 10px;
+  }
+
+  .section-bubble {
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .section-bubble h2 {
+    font-size: 1.5em;
+  }
+
+  .github-links {
+    font-size: 1.2em;
+  }
+
+  .call-to-action {
+    font-size: 1.3em;
+  }
+
+  .test-images-vertical img {
+    max-width: 100%;
   }
 }

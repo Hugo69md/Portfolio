@@ -63,6 +63,7 @@
         
         <a href="#project2" class="project-card" data-section="project2">
           <h3>Rupture Trend Analysis Tools</h3>
+          <p>Visualization tools for rupture trend analysis in the pharmaceutical industry</p>
         </a>
         
         <a href="#project3" class="project-card" data-section="project3">
@@ -380,9 +381,84 @@
       
       <h1>Rupture Trend Analysis Tools</h1>
 
-      <div class="construction-message">
-        <p>Portfolio under construction</p>
+      <div class="section-bubble">
+        <h2>CONTEXT</h2>
+        <p>
+          While on an internship at a pharmaceutical company, I was asked to help managing ruptures of medicines.
+        </p>
+        <p>
+          After noticing that no visuals were available for that subject, i decided to create a suite of tools that would give specific and general informations about ruptures
+        </p>
+        <p>
+          Only a table filled with dates was provided to my department for rupture analysis, being quite visual myself and knowing a lot of people aren't quite abstract enough to imagine ruptures trough some dates, a visualization tool for this purpose was needed.
+        </p>
       </div>
+
+      <div class="section-bubble">
+        <h2>THE PROJECT</h2>
+        <p>
+          For a general analysis, I made a python script that gives a graph of the evolution of ruptures since the beginning of the database with the possibility to Filters by canals or by complete ruptures only. A simple, first but necessary step into the rupture trend analysis.
+        </p>
+        
+        <div class="image-section">
+          <p>
+            Here are 4 different graphs, the first one shows the evolution of ruptures over time, the second one represents the evolution of complete rupture over time the last one displays the evolution of ruptures on the distribution canal dedicated to exportation
+          </p>
+          <div class="image-grid">
+            <img src="images/ruptures/Rupturecounts.png" alt="General rupture evolution over time">
+            <img src="images/ruptures/RupturecountsComplète.png" alt="Complete rupture evolution over time">
+            <img src="images/ruptures/RupturecountsDirect.png" alt="Rupture evolution - Direct distribution canal">
+            <img src="images/ruptures/RupturecountsExport.png" alt="Rupture evolution - Export distribution canal">
+          </div>
+        </div>
+
+        <p>
+          For a more precise analysis, I made an excel based on the rupture's database that gives a visual representation as a yearly calendar for a specific year and reference number, with the possibility to add the same filters as the general analysis
+        </p>
+        <p>
+          If the date is lit up = rupture<br>
+          Date is not lit up = not rupture for that date
+        </p>
+        <p>
+          *Distribution canal: groupement of clients regarding specific criterions
+        </p>
+
+        <div class="image-section">
+          <p>
+            Here are the calendars, all using the reference number 3910688 and the year 2024. the first calendar shows any ruptures in red. the second one shows complete ruptures in red. and partial ruptures in yellow for a more precise analysis , the 3 following one display the same reference for the same year but on specific distribution canals : Direct, hospital, export and Giphar, a french drugstore franchise.
+          </p>
+          <div class="image-grid">
+            <img src="images/ruptures/rupture_general.png" alt="General rupture calendar - Reference 3910688, year 2024">
+            <img src="images/ruptures/rupture_complete_and_partial.png" alt="Complete and partial ruptures calendar">
+            <img src="images/ruptures/ruipture_direct.png" alt="Rupture calendar - Direct distribution canal">
+            <img src="images/ruptures/rupture_hospital.png" alt="Rupture calendar - Hospital distribution canal">
+            <img src="images/ruptures/rupture_export.png" alt="Rupture calendar - Export distribution canal">
+            <img src="images/ruptures/rupture_giphar.png" alt="Rupture calendar - Giphar distribution canal">
+          </div>
+        </div>
+      </div>
+
+      <div class="section-bubble">
+        <h2>RESULTS</h2>
+        <p>
+          Both the python and excel files are really intuitive, easy to set up and easy to update, the python file could be entirely automated with the direct access of the database
+        </p>
+        <p>
+          The overall analysis graphs are a great visual information for the evolution of ruptures over time, but the real deal Is the excel tool. It delivers quick visual informations that would require lots of work and time in between the database, mails, and excels otherwise.
+        </p>
+        <p>
+          The ruptures of the company might not have been improve directly but the rupture and supply chain department are now more proficient with work and can have a visual representation that wasn't available before. They make better prevision, see trends of rupture directly which leads to better management of stocks.
+        </p>
+      </div>
+
+      <h2>Skills and Software Used</h2>
+      <ul>
+        <li>Python</li>
+        <li>Excel</li>
+        <li>Data analysis</li>
+        <li>Data transformation</li>
+        <li>Data visualization</li>
+      </ul>
     </div>
 
     <!-- Credits -->

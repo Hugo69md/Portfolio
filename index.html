@@ -615,64 +615,63 @@
         <p>
           it is also possible to apply filters : fiscal year, expert accountant associated, only taking into account time element with no billing and vice versa, as well as sorting the tables using specific criteria.
         </p>
-        
-        <div class="image-section">
-          <p>
-            Here is the output of two pivot tables, client / operation, as well as accountant / operation, with no filters, 
-          </p>
-          <p>
-            You can see 4 columns for each accountant, 2 hourly and 2 absolute values columns. As well as 'prix de vente' and 'valorisation'. The 'valorisation' corresponds to the price rate that which the accounting firm pays his accountant. The 'prix de vente' is the amount the accounting firm expects the client to pay when lending an accountant. 
-          </p>
-          <p>
-            The excel template automatically applies conditional formatting to the values for ease of reading
-          </p>
-          <p>
-            The bonus or malus on the 'prix de vente' or 'valorisation' is the difference in between the expected payements and the actual facturation, here is a small example :
-          </p>
-          <p>
-            An accountant 'X' has a V of 50$/hour and the PDV is 75$/hour, he spends 2 hours on a task for which the client pays him 300$. 
-          </p>
-          <p>
-            His absolute bonus or malus (bonimali) for his V is 300 - 2*50 = 200$
-          </p>
-          <p>
-            His absolute bonimali for pdv is 300 - 2*75 = 150$
-          </p>
-          <p>
-            His hourly bonimali for his V is 300/2 - 50 = 100$
-          </p>
-          <p>
-            His hourly bonimali for pdv is 300/2 - 75 = 75$
-          </p>
-          <p>
-            For this task, this accountant generated a net bonus of 200$ for the accounting firm, he also generated 150$ more than what is expected of him for this task 
-          </p>
-          <div class="image-grid">
-            <img src="images/MYU/collab_op.png" alt="Excel output - Accountant / Operation pivot table">
-            <img src="images/MYU/client_op.png" alt="Excel output - Client / Operation pivot table">
-          </div>
-        </div>
+      </div>
 
-        <div class="image-section">
-          <p>
-            Here is another pivot table comparing accountant bonuses on their respective clients. Here, a filter is applied and only billing elements with no time spent are shown, as you can see the hourly bonimalis are all zeros but the absolutes bonimalis are positive.
-          </p>
-          <div class="image-grid">
-            <img src="images/MYU/collab_client_filtre_temps_nul.png" alt="Excel output - Accountant bonuses filtered by zero time">
-          </div>
+      <div class="test-section">
+        <h3>Basic pivot table use</h3>
+        <p>
+          Here is the output of two pivot tables, client / operation, as well as accountant / operation, with no filters, 
+        </p>
+        <p>
+          You can see 4 columns for each accountant, 2 hourly and 2 absolute values columns. As well as 'prix de vente' and 'valorisation'. The 'valorisation' corresponds to the price rate that which the accounting firm pays his accountant. The 'prix de vente' is the amount the accounting firm expects the client to pay when lending an accountant. 
+        </p>
+        <p>
+          The excel template automatically applies conditional formatting to the values for ease of reading
+        </p>
+        <p>
+          The bonus or malus on the 'prix de vente' or 'valorisation' is the difference in between the expected payements and the actual facturation, here is a small example :
+        </p>
+        <p>
+          An accountant 'X' has a V of 50$/hour and the PDV is 75$/hour, he spends 2 hours on a task for which the client pays him 300$. 
+        </p>
+        <p>
+          His absolute bonus or malus (bonimali) for his V is 300 - 2*50 = 200$
+        </p>
+        <p>
+          His absolute bonimali for pdv is 300 - 2*75 = 150$
+        </p>
+        <p>
+          His hourly bonimali for his V is 300/2 - 50 = 100$
+        </p>
+        <p>
+          His hourly bonimali for pdv is 300/2 - 75 = 75$
+        </p>
+        <p>
+          For this task, this accountant generated a net bonus of 200$ for the accounting firm, he also generated 150$ more than what is expected of him for this task 
+        </p>
+        <div class="image-grid-vertical">
+          <img src="images/MYU/collab_op.png" alt="Excel output - Accountant / Operation pivot table">
+          <img src="images/MYU/client_op.png" alt="Excel output - Client / Operation pivot table">
         </div>
+      </div>
 
-        <div class="image-section">
-          <p>
-            Here is the last pivot table available in the standard template, it shows everything, the tasks, the clients and the accountant as well as the time spent on the tasks, here it is filtered from lowest ro largest on the absolute bonimali for the PDV.
-          </p>
-          <p>
-            Our accountant made a bonus of 10833.34€ on Yves Saint Laurent without working at all , gaining 5000€ on 2 tasks : « Travaux clôture » and « Budget Juridique » but he had a malus of -800€ for Absence Cabinet. 
-          </p>
-          <div class="image-grid">
-            <img src="images/MYU/collab_op_client_filtre_bonimaliprixdevente.png" alt="Excel output - Complete pivot table filtered by bonimali">
-          </div>
-        </div>
+      <div class="test-section">
+        <h3>Filtering</h3>
+        <p>
+          Here is another pivot table comparing accountant bonuses on their respective clients. Here, a filter is applied and only billing elements with no time spent are shown, as you can see the hourly bonimalis are all zeros but the absolutes bonimalis are positive.
+        </p>
+        <img src="images/MYU/collab_client_filtre_temps_nul.png" alt="Excel output - Accountant bonuses filtered by zero time">
+      </div>
+
+      <div class="test-section">
+        <h3>Sorting</h3>
+        <p>
+          Here is the last pivot table available in the standard template, it shows everything, the tasks, the clients and the accountant as well as the time spent on the tasks, here it is filtered from lowest ro largest on the absolute bonimali for the PDV.
+        </p>
+        <p>
+          Our accountant made a bonus of 10833.34€ on Yves Saint Laurent without working at all , gaining 5000€ on 2 tasks : « Travaux clôture » and « Budget Juridique » but he had a malus of -800€ for Absence Cabinet. 
+        </p>
+        <img src="images/MYU/collab_op_client_filtre_bonimaliprixdevente.png" alt="Excel output - Complete pivot table filtered by bonimali">
       </div>
 
       <div class="section-bubble">

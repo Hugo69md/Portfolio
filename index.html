@@ -77,7 +77,8 @@
         </a>
         
         <a href="#project5" class="project-card" data-section="project5">
-          <h3>Anonymization of dataset to ensure security while using LLMS</h3>
+          <h3>Jobot</h3>
+          <p>Automation of internship search, tailoring of resume to save time</p>
         </a>
       </div>
     </section>
@@ -713,12 +714,107 @@
   <section id="project5" class="page-section">
     <div class="project-container">
       <a href="#home" class="back-button" data-section="home">← Back to Portfolio</a>
-      
-      <h1>Anonymization of dataset to ensure security while using LLMS</h1>
 
-      <div class="construction-message">
-        <p>Portfolio under construction</p>
+      <h1>Jobot</h1>
+
+      <p class="github-links">
+        Here is the GitHub link to my project! : <a href="https://github.com/Hugo69md/jobot" target="_blank">@Hugo69md/jobot</a>
+      </p>
+
+      <div class="section-bubble">
+        <h2>CONTEXT</h2>
+        <p>
+          As a 5th year engineering student actively searching for an end-of-studies internship in Data and Supply Chain, I was spending a significant amount of time every day on repetitive job-hunting tasks: browsing job platforms, reading offer descriptions, evaluating whether each one matched my profile, tailoring my CV and cover letter for every application, and then actually applying. This manual process was extremely time-consuming and inconsistent — some days I would miss good opportunities simply because I couldn't keep up with the volume of new postings.
+        </p>
+        <p>I needed a solution that could:</p>
+        <ul>
+          <li>Automatically scrape internship offers from job platforms on a daily basis, without any manual intervention.</li>
+          <li>Intelligently score and rank each offer against my profile using AI, so I could focus only on the most relevant opportunities.</li>
+          <li>Generate tailored CVs and cover letters as ready-to-send PDFs, with experience descriptions and skills sections dynamically adapted to each specific offer.</li>
+          <li>Notify me in real time via a mobile interface, allowing me to review each offer and approve or reject applications on the go.</li>
+          <li>Run entirely autonomously in the cloud on a schedule, requiring zero daily effort from me.</li>
+        </ul>
       </div>
+
+      <div class="section-bubble">
+        <h2>THE PROJECT</h2>
+        <p>
+          Jobot is a fully automated, end-to-end job application pipeline built in Python. The entire system is orchestrated through a single main.py entry point that runs 5 sequential steps, each one modular and independent.
+        </p>
+        <p>
+          <strong>Step 1 — Scraping (Scrapy + Playwright):</strong> A custom Scrapy spider with Playwright (headless Chromium) scrapes internship listings from job platforms. It navigates JavaScript-rendered pages, extracts offer titles, company names, descriptions, URLs, and exports everything into a structured internships.json file.
+        </p>
+        <p>
+          <strong>Step 2 — AI Analysis (Ollama + Qwen 3.5):</strong> The core intelligence of the project. Each scraped offer goes through a multi-step AI pipeline: domain classification (Data vs. Supply Chain), structured extraction of missions and required skills, scoring against my CV on 5 weighted criteria (out of 100), intelligent selection of my most relevant experiences, AI-tailored rewriting of each experience description to match the offer, custom cover letter generation, and skills section optimization. The AI is strictly prompted to never fabricate skills or experiences absent from my structured cv.json file.
+        </p>
+      </div>
+
+      <div class="image-section">
+        <p>
+          The cv.json file is the single source of truth for the AI. It contains all my experiences (indexed, typed by domain, with specific skills and categorization), a prioritized skills taxonomy organized into top priority, priority, and bonus tiers for both Data and Supply Chain domains, as well as my personal information. The AI reads this structured data to build every tailored application.
+        </p>
+        <div class="image-grid">
+          <img src="images/jobot_photos/cv_json_experience.png" alt="cv.json - experiences and personal info">
+          <img src="images/jobot_photos/cv_json_keywords.png" alt="cv.json - prioritized skills taxonomy">
+        </div>
+      </div>
+
+      <div class="section-bubble">
+        <p>
+          <strong>Step 3 — PDF Generation (ReportLab):</strong> For each offer scoring above the threshold (80/100), the system automatically generates two professional PDF documents: a tailored CV with photo, dynamically selected experiences, rewritten descriptions, and an offer-specific skills section, as well as a personalized cover letter. Each offer gets its own subfolder with all generated files.
+        </p>
+      </div>
+
+      <div class="image-section">
+        <p>
+          Here is an example of the enriched output for a single offer. The AI has classified the offer, extracted its missions and required skills, scored it against my profile, selected the best-matching experiences, and rewritten their descriptions — all stored in a structured JSON ready for PDF generation.
+        </p>
+        <div class="image-grid-vertical">
+          <img src="images/jobot_photos/internship_enriched.png" alt="Example of offers_enriched.json showing AI scoring and tailored content">
+        </div>
+      </div>
+
+      <div class="section-bubble">
+        <p>
+          <strong>Step 4 — Telegram Notification (python-telegram-bot):</strong> All results are pushed to a private Telegram bot. For each offer, the bot sends the offer URL, the generated CV and cover letter as PDF documents, and an interactive summary showing the company name, offer title, and AI score out of 100. Each summary includes YES / NO inline buttons — I can review and approve or reject each application directly from my phone.
+        </p>
+      </div>
+
+      <div class="image-section">
+        <p>
+          Here is the Telegram bot interface. Each offer is sent with its URL, the tailored CV and cover letter PDFs, and an interactive summary with YES / NO buttons for instant decision-making from my phone.
+        </p>
+        <div class="image-grid-vertical">
+          <img src="images/jobot_photos/telegram.png" alt="Telegram bot interface showing offer summary with YES/NO buttons">
+        </div>
+      </div>
+
+      <div class="section-bubble">
+        <p>
+          <strong>Step 5 — CI/CD Automation (GitHub Actions):</strong> The entire pipeline runs autonomously via a GitHub Actions workflow, scheduled twice daily (11:00 AM and 4:00 PM). The workflow sets up Python, installs all dependencies, pulls and caches the Ollama LLM model, runs the full pipeline, and uploads all outputs as artifacts. The model cache is persisted between runs to avoid re-downloading the ~2GB model each time.
+        </p>
+      </div>
+
+      <div class="section-bubble">
+        <h2>RESULTS</h2>
+        <p>
+          The pipeline successfully processes up to 9 job offers per run, scoring and generating complete application packages in a single automated execution. The system has been running daily since February 2026, producing over 60+ complete runs with tailored CVs and cover letters for companies such as L'Oréal, CHANEL, Louis Vuitton, Deloitte, Allianz, Ferrero, Ubisoft, Wavestone, and Volkswagen — all without any manual effort beyond pressing YES or NO on Telegram.
+        </p>
+        <p>
+          The system requires zero daily effort: it runs entirely in the cloud via GitHub Actions with no local setup needed. The AI uses structured multi-step prompt chains with strict no-hallucination rules and JSON-only output. Every run produces timestamped output folders with full traceability — raw scraped data, enriched data, scoring results, match data, PDFs, and decision logs. The modular architecture (init → scraper → IA → PDF gen → Telegram → auto-apply) makes it easy to extend or replace any step independently.
+        </p>
+      </div>
+
+      <h2>Skills and Software Used</h2>
+      <ul>
+        <li>Python</li>
+        <li>Web scraping (Scrapy + Playwright)</li>
+        <li>AI / LLM (Ollama, Qwen 3.5)</li>
+        <li>PDF generation (ReportLab)</li>
+        <li>Telegram Bot API</li>
+        <li>GitHub Actions CI/CD</li>
+        <li>JSON data processing</li>
+      </ul>
     </div>
 
     <!-- Credits -->

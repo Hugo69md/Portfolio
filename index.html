@@ -751,7 +751,7 @@
 
       <div class="section-bubble">
         <p>
-          <strong>Step 2 — AI Analysis (Ollama + Qwen 3.5):</strong> The core intelligence of the project. Each scraped offer goes through a multi-step AI pipeline: domain classification (Data vs. Supply Chain), structured extraction of missions and required skills, scoring against my CV on 5 weighted criteria (out of 100), intelligent selection of my most relevant experiences, AI-tailored rewriting of each experience description to match the offer, custom cover letter generation, and skills section optimization. The AI is strictly prompted to never fabricate skills or experiences absent from my structured cv.json file.
+          <strong>Step 2 — AI Analysis (Ollama Qwen 3.5 / GLM 4.7 flash):</strong> The core intelligence of the project. Each scraped offer goes through a multi-step AI pipeline: domain classification (Data vs. Supply Chain), structured extraction of missions and required skills, scoring on 5 weighted criteria (out of 100), intelligent selection of my most relevant experiences, AI-tailored rewriting of each experience description to match ATS keywords the offer, skills section optimization and custom cover letter generation. The AI is strictly prompted to never fabricate skills or experiences absent from my structured cv.json file using sspecific master prompts, temperatures, max outout token & enforcing it to ask for its reasoning.
         </p>
       </div>
 

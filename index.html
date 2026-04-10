@@ -741,9 +741,15 @@
         <p>
           Jobot is a fully automated, end-to-end job application pipeline built in Python. The entire system is orchestrated through a single main.py entry point that runs 5 sequential steps, each one modular and independent.
         </p>
+      </div>
+      
+      <div class="section-bubble">
         <p>
           <strong>Step 1 — Scraping (Scrapy + Playwright):</strong> A custom Scrapy spider with Playwright (headless Chromium) scrapes internship listings from job platforms. It navigates JavaScript-rendered pages, extracts offer titles, company names, descriptions, URLs, and exports everything into a structured internships.json file.
         </p>
+      </div>
+
+      <div class="section-bubble">
         <p>
           <strong>Step 2 — AI Analysis (Ollama + Qwen 3.5):</strong> The core intelligence of the project. Each scraped offer goes through a multi-step AI pipeline: domain classification (Data vs. Supply Chain), structured extraction of missions and required skills, scoring against my CV on 5 weighted criteria (out of 100), intelligent selection of my most relevant experiences, AI-tailored rewriting of each experience description to match the offer, custom cover letter generation, and skills section optimization. The AI is strictly prompted to never fabricate skills or experiences absent from my structured cv.json file.
         </p>
@@ -808,12 +814,11 @@
       <h2>Skills and Software Used</h2>
       <ul>
         <li>Python</li>
-        <li>Web scraping (Scrapy + Playwright)</li>
-        <li>AI / LLM (Ollama, Qwen 3.5)</li>
-        <li>PDF generation (ReportLab)</li>
+        <li>Web scraping</li>
+        <li>AI</li>
+        <li>Data Pipeline</li>
         <li>Telegram Bot API</li>
-        <li>GitHub Actions CI/CD</li>
-        <li>JSON data processing</li>
+        <li>Automation</li>
       </ul>
     </div>
 
